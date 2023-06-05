@@ -1,23 +1,50 @@
 # 💫 About Me:
 ```csharp
 using System;
+
 class SoftwareDeveloper
 {
     public string Name { get; set; }
     public string Role { get; set; }
     public string[] LanguageSpoken { get; set; }
+    public string[] Hobbies { get; set; }
+    public SocialMedia SocialMedia { get; set; }
 
     public SoftwareDeveloper()
     {
         Name = "Ahmet Emin Çoban";
         Role = "Software Developer";
-        LanguageSpoken = new string[] { "tr_tr", "en_US" };
+        LanguageSpoken = new string[] { "tr_TR", "en_US" };
+        Hobbies = new string[] { "fitness", "cooking", "reading", "drawing" };
+        SocialMedia = new SocialMedia
+        {
+            Instagram = "ahmeteminst",
+            Discord = "AhmetEminSt#6058",
+            Website = "https://ahmeteminst.com",
+            Email = "mail@ahmeteminst.com"
+        };
     }
 
     public void SayHi()
     {
-        Console.WriteLine("Thanks for dropping by, hope you find some of my work interesting.");
+        Console.WriteLine($"Greetings, fellow tech enthusiasts! I'm {Name}, a {Role} by profession.");
+        Console.WriteLine($"I am fluent in {string.Join(", ", LanguageSpoken)} and passionate about coding and crafting innovative software solutions.");
+        Console.WriteLine($"When I'm not typing away on my keyboard, you can often find me indulging in my hobbies, which include {string.Join(", ", Hobbies)}.");
+        Console.WriteLine($"Feel free to connect with me and explore my work through the following channels:");
+        Console.WriteLine($"Instagram: {SocialMedia.Instagram}");
+        Console.WriteLine($"Discord: {SocialMedia.Discord}");
+        Console.WriteLine($"Website: {SocialMedia.Website}");
+        Console.WriteLine($"Email: {SocialMedia.Email}");
+        Console.WriteLine("Let's embark on an exciting journey in the world of software development together!");
     }
+}
+
+class SocialMedia
+{
+    public string Instagram { get; set; }
+    public string Discord { get; set; }
+    public string Website { get; set; }
+    public string Email { get; set; }
 }
 
 class Program
@@ -28,6 +55,7 @@ class Program
         me.SayHi();
     }
 }
+
 ```
 
 
